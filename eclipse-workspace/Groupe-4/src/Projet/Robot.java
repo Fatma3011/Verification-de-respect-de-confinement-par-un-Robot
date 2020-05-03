@@ -7,27 +7,27 @@ public class Robot extends Objet {
 		direction=DIRECTION.Est;}
 		
 	
+	
+
+
+	void SetDirection( DIRECTION d) {direction=d;}		
 	void avancer ( ) {
-     if (direction ==DIRECTION.Est) x++;  
-	 if (direction==DIRECTION.Ouest )  x--;
-	 if (direction==DIRECTION.Sud) y++;
-	 if (direction==DIRECTION.Nord) y--;
+     if (direction ==DIRECTION.Est) y++;;  
+	 if (direction==DIRECTION.Ouest )  y--;
+	 if (direction==DIRECTION.Sud) x++;
+	 if (direction==DIRECTION.Nord) x--;
+	 System.out.println ("les coordonnées de robot sont" +"("+x+","+y+")"+" et la direction est:"+direction );
+    
 		 }
 
-	void droite() {
-		  if (direction ==DIRECTION.Est) { y++;   direction=DIRECTION.Sud;}
-		  if (direction==DIRECTION.Ouest ) { y--; direction=DIRECTION.Nord;}
-		  if (direction==DIRECTION.Sud)     {x--; direction=DIRECTION.Ouest;}
-		  if (direction==DIRECTION.Nord) { x++;direction=DIRECTION.Est;}
-	}
-	 
-    void gauche () {
-    	 if (direction ==DIRECTION.Est) { y--;   direction=DIRECTION.Nord;}
-		  if (direction==DIRECTION.Ouest ) { y++; direction=DIRECTION.Sud;}
-		  if (direction==DIRECTION.Sud)     {x++; direction=DIRECTION.Est ;}
-		  if (direction==DIRECTION.Nord) { x--;direction=DIRECTION.Ouest;}
-    	 
-    }
+	
+     void diag () {
+    	  if (direction==DIRECTION.Sud) {
+    	     y=y-1;
+    		 x=x+1;
+    	 direction= DIRECTION.Sud;
+    	 System.out.println ("les coordonnées de robot sont" +"("+x+","+y+")"+" et la direction est:"+direction );}
+     }
    
 	
     public static void main (String[] args) 

@@ -1,5 +1,6 @@
 package Projet;
 
+import java.util.Scanner;
 public class ZoneGeo {
 	int nL;     // nombre des lignes de la grille
 	int nC;     // nombre des colonnes de la grille
@@ -48,14 +49,103 @@ public class ZoneGeo {
 	}
 	public static void main (String[] args) throws ErrDimensions,ErrCoord,ErrEgaux 
 	{
-		Objet o1=new Objet(1,2);
-		Objet o2=new Objet(2,3);
-		ZoneGeo z1=new ZoneGeo(5,5,4,0,4,2);
-		ZoneGeo z2=new ZoneGeo(5,5,4,1,2,1);
-		z1.ajouter(o1);
-		z2.ajouter(o2);
-		System.out.println(z1.EstVide(1, 2));
-		z1.EstVide(2, 3);
+		
+		  Scanner sc = new Scanner(System.in);
+		
+	       System.out.println("saisir le nombre de ligne ");
+		     int nL = sc.nextInt();
+
+		
+		    System.out.println("saisir le nombre de colonnes ");
+		    int nC = sc.nextInt();
+		   	ZoneGeo z=new ZoneGeo(nL,nC,0,0,nL-1,nC-1);
+			
+		   	Robot r = new Robot (0,0);
+			if (nL % 2 == 0) {
+				int k=0;
+				while (k<nL) {
+					int i;
+					for ( i=0; i<nC;i++) {
+						 r.avancer(); 
+						 if (i==nC-1) {r.SetDirection(DIRECTION.Sud);
+							r.avancer();
+							r.SetDirection(DIRECTION.Ouest);
+							for (int j=0;j<nC;j++) {
+								r.avancer();
+								if (j==nC-1)
+								{
+									r.SetDirection(DIRECTION.Sud);
+									r.avancer();
+									
+								}}
+							 }
+						 }
+					
+					
+					
+				
+				
+				
+				
+						 r.SetDirection(DIRECTION.Est);	k+=2;}
+				if (k==nL) { for (int h=0;h<nC;h++) r.avancer();}
+			                  }
+			
+			
+			
+			else  {
+			
+			
+				int k=0;
+				while (k<nL-2) {
+					int i;
+					for ( i=0; i<nC;i++) {
+						 r.avancer(); 
+						 if (i==nC-1) {r.SetDirection(DIRECTION.Sud);
+							r.avancer();
+							r.SetDirection(DIRECTION.Ouest);
+							for (int j=0;j<nC;j++) {
+								r.avancer();
+								if (j==nC-1)
+								{
+									r.SetDirection(DIRECTION.Sud);
+									r.avancer();
+								
+									
+								}}
+							 }
+						 }
+					
+					
+					
+				
+				
+				
+				
+						 r.SetDirection(DIRECTION.Est);	k+=2;}r.SetDirection (DIRECTION.Sud);r.avancer();
+						 for (int i=0; i<nC;i++) {
+						 r.diag();
+						 r.avancer();}}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+			
+		
+		
+		
 	}
 	
 }
