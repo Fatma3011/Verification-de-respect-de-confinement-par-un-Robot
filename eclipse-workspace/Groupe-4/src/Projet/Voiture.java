@@ -1,12 +1,12 @@
 package Projet;
 
 import java.util.Scanner;
-
-public class Voiture extends Objet{
+public class Voiture extends Objet {
 	boolean vide ;   // si vide=true la voiture est vide 
 	Homme contenu;  // si la voiture n'est pas vide le chauffeur sera ajouté 
-	Voiture(boolean v,int x,int y){
+	public Voiture(boolean v,int x,int y){
 		super(x,y);
+		type="voiture";
 		if(v==true) {
 			System.out.println("Une voiture vide a été ajoutée avec succès ");
 		}
@@ -25,4 +25,12 @@ public class Voiture extends Objet{
 			sc.close();
 		}
 	}
+	public void setcontenu(Homme h)
+	{
+		contenu=h;
+	}
+	public Homme getContenu() {
+		return contenu;
+	}
+
 }

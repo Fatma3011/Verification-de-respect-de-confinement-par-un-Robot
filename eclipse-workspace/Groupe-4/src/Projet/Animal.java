@@ -1,10 +1,12 @@
 package Projet;
 
+
 public class Animal extends Objet {
-	
-	Animal(int x, int y){
-		
+	public Animal(int x,int y){
 		super(x,y);
+		
+			System.out.println("Un animal a été ajouté avec succès ");
+		
 	}
 
 }
