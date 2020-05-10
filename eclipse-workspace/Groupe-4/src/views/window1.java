@@ -1,4 +1,4 @@
-package views;
+package views; //contenant les classes liées à l'interface graphique 
 
 import java.awt.EventQueue;
 
@@ -26,11 +26,12 @@ import java.util.ArrayList;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 
+
+
 public class window1 extends JFrame {
 //classe de la premiere fenetre ou le joueur doit entrer les informations 
 	private JPanel contentPane;
 	private JMenu mnNewMenu_1;
-	private JMenu mnNewMenu;
 	private JMenuBar menuBar;
 	private JTextField txtSignUpNow;
 	private JTextField textField;
@@ -47,6 +48,7 @@ public class window1 extends JFrame {
 	private JRadioButton rdbtnNewRadioButton_1;
 	private JLabel lblNewLabel_3;
 	String couleur ;
+	
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	
 	 Game g;
@@ -102,16 +104,38 @@ public class window1 extends JFrame {
 	
 	//si le joueur clique sur start ,le jeu se déclenche et les données saisis sont transferer à la classe Game
 	
+	
 		btnNewButton.addMouseListener(new MouseAdapter() {
+			
+			
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				
+				boolean C=true;
+				boolean R=true;
+				try {
+				Integer i=Integer.parseInt(textField_1.getText());}
+				catch(NumberFormatException ev){
+					R=false;
+				}
+				try {
+					Integer i=Integer.parseInt(textField_2.getText());}
+					catch(NumberFormatException ev){
+						C=false;
+					}
+					
+				
 				
 				ArrayList<String> s=new ArrayList<>();
 				if (textField.getText().length()==0)
 					JOptionPane.showMessageDialog(null,"please check your robot's name " );
+				else if(!R)
+					JOptionPane.showMessageDialog(null," Please enter only numbers for the field Rows! " );
 				else if ((textField_1.getText().length()==0) || (Integer.parseInt(textField_1.getText())<=0)||(Integer.parseInt(textField_1.getText())>5))
-				
+					
 				JOptionPane.showMessageDialog(null,"please check the number of rows " );
+				else if(!C)
+					JOptionPane.showMessageDialog(null," Please enter only numbers for the field Columns ! " );
 				else if ((textField_2.getText().length()==0) || (Integer.parseInt(textField_1.getText())<=0)||(Integer.parseInt(textField_1.getText())>11))
 					JOptionPane.showMessageDialog(null,"please check the number of columns " );
 				else {
@@ -190,9 +214,6 @@ public class window1 extends JFrame {
 		menuBar = new JMenuBar();
 		setJMenuBar(menuBar);
 		
-		mnNewMenu = new JMenu("Edit");
-		menuBar.add(mnNewMenu);
-		
 		mnNewMenu_1 = new JMenu("Help");
 		menuBar.add(mnNewMenu_1);
 		
@@ -252,6 +273,8 @@ public class window1 extends JFrame {
 		contentPane.add(lblNewLabel_2);
 		
 		textField_1 = new JTextField();
+	
+		
 		textField_1.setBounds(278, 96, 119, 20);
 		contentPane.add(textField_1);
 		textField_1.setColumns(10);

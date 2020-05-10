@@ -65,12 +65,14 @@ public	boolean EstVide(int x,int y)  // méthode qui retourne "true" si une case 
 		    { personne++;
 		      if(((Homme) obj).getMotif()==false)
 		    	  nonpermis++;
+		      System.out.println("une personne est rencontrée a la case ("+i+","+j+") avec une motif "+((Homme) obj).getMotif() );
 		    }
 		    if(obj.type=="voiture" && ((Voiture)obj).getContenu()!=null)
 		    	
 				{ personne++;
 				   if(! ((Voiture)obj).getContenu().getMotif())
 					   nonpermis++;
+				   System.out.println("un chauffeur est rencontré a la case ("+i+","+j+") avec une motif "+((Voiture)obj).getContenu().getMotif() );
 				}
 		     
 			 
@@ -193,8 +195,3 @@ public	boolean EstVide(int x,int y)  // méthode qui retourne "true" si une case 
 	}
 		
 	}
-
-
-
-
-
