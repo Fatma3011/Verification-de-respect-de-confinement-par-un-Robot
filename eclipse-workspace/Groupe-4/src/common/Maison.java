@@ -1,4 +1,4 @@
-package Projet;
+package common;
 
 public class Maison extends Objet {
 	public Maison(int x,int y){

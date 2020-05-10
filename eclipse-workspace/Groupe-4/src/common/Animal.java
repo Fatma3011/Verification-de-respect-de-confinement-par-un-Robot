@@ -1,4 +1,4 @@
-package Projet;
+package common;
 
 
 public class Animal extends Objet {

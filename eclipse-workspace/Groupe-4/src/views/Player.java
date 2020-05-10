@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 import javax.imageio.ImageIO;
 
-import Projet.DIRECTION;
+import common.DIRECTION;
 
 //player est la representation du robot sur la grille
 public class Player {

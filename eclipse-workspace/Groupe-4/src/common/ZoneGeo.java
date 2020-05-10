@@ -1,4 +1,4 @@
-package Projet;//contenant les classes non liées a l'interface graphique 
+package common;//contenant les classes non liées a l'interface graphique 
 
 import java.util.Scanner;
 

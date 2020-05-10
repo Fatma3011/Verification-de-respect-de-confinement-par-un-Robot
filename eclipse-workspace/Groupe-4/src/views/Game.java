@@ -1,7 +1,5 @@
 package views;
 
-import Projet.*;
-
 import java.awt.BorderLayout;
 import java.awt.Canvas;
 import java.awt.Color;
@@ -22,6 +20,8 @@ import javax.swing.ImageIcon;
 
 
 import javax.swing.JFrame;
+
+import common.*;
 
 
 

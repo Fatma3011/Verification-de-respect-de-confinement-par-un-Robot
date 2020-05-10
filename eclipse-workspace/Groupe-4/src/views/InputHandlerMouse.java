@@ -9,11 +9,11 @@ import java.awt.event.MouseWheelListener;
 
 import javax.swing.JOptionPane;
 
-import Projet.Animal;
-import Projet.Homme;
-import Projet.Maison;
-import Projet.Objet;
-import Projet.Voiture;
+import common.Animal;
+import common.Homme;
+import common.Maison;
+import common.Objet;
+import common.Voiture;
 
 //classe qui controle les evenements liés à la souris
 public class InputHandlerMouse implements MouseListener,MouseMotionListener,MouseWheelListener {

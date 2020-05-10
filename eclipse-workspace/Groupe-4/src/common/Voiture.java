@@ -1,4 +1,4 @@
-package Projet;
+package common;
 
 import java.util.Scanner;
 public class Voiture extends Objet {
